@@ -4,8 +4,8 @@
       char estadoA, estadoB; //letra do estado, vai de A a H.
       char codigoA[3], codigoB[3]; //letra do estado + código da cidade que vai de 01 a 04.
       char cidadeA[20], cidadeB[20]; //nome da cidade, sem espaços por enquanto.
-      unsigned long int populacaoA, populacaoB;
-      float superpoderA, superpoderB, areaA, areaB, pibA, pibB, pibpercapitaA, pibpercapitaB, densidadeA, densidadeB;
+      unsigned long int populacaoA, populacaoB; //população como unsigned long int
+      float superpoderA, superpoderB, areaA, areaB, pibA, pibB, pibpercapitaA, pibpercapitaB, densidadeA, densidadeB; //superpoder, area, pib, pibpercapita, densidade como float
       int pontostA, pontostB; //número de pontos turísticos
 
       printf("Seja bem vindo ao Super Trunfo de Cidades !\n\n");
@@ -32,7 +32,7 @@
       printf("Digite o numero de pontos turísticos da cidade: \n");
       scanf("%d", &pontostA);
 
-      pibpercapitaA = (pibA / populacaoA);
+      pibpercapitaA = ((pibA*1000000000) / populacaoA);
       densidadeA = (populacaoA / areaA);
 
       printf("Seguem os dados da primeira carta cadastrada ! \n");
@@ -69,7 +69,7 @@
       printf("Digite o numero de pontos turísticos da cidade: \n");
       scanf("%d", &pontostB);
 
-      pibpercapitaB = (pibB/ populacaoB);
+      pibpercapitaB = ((pibB*1000000000)/ populacaoB);
       densidadeB = (populacaoB / areaB);
 
       printf("Carta 2: Código: %s\n", codigoB);
